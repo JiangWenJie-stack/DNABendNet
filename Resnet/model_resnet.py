@@ -63,23 +63,6 @@ class Resnet:
         model.summary()
 
         model.compile(optimizer = tf.keras.optimizers.Adam(learning_rate=lr),
-                      loss={'priority': tf.keras.losses.MeanSquaredError()},
-                      metrics="MSE")
+                      loss={'priority': tf.keras.losses.MeanSquaredError()})
 
         return model
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
