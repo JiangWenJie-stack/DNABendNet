@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import h5py
 import tensorflow as tf
 
+plt.switch_backend('agg')
+
 def rev_comp(x):
 	return np.flip(x, 1)[:, :, [1, 0, 3, 2]]
 
@@ -93,7 +95,7 @@ def train(model, X_train, Y_train, validation_data, checkpoint_path="model",
           epoch=10, batch_size=256):
     # load trained weights
     if checkpoint_path is not None and os.path.exists(checkpoint_path+'.index'):
-        print('-' * 30 + 'Weights loaded' + '-' * 30)
+        print('-' * 30 + 'Previous weights loaded' + '-' * 30)
         model.load_weights(checkpoint_path)
     # compile model
     model.compile(optimizer='adam', loss='mse')
@@ -116,7 +118,14 @@ def train(model, X_train, Y_train, validation_data, checkpoint_path="model",
     return history
 
 
-def evaluate(model, X_test, Y_test, history, figure_path='figure'):
+def evaluate(model, X_test, Y_test, history,
+			 checkpoint_path="model", figure_path='figure'):
+
+	if checkpoint_path is not None and os.path.exists(checkpoint_path+'.index'):
+		print('-' * 30 + 'Best model weights loaded' + '-' * 30)
+		model.load_weights(checkpoint_path)
+
+	# predict
 	Y_pred = model.predict(X_test)
 	prediction = Y_pred.reshape(Y_test.shape[0],)
 	Y_test = Y_test.reshape(Y_test.shape[0],)
