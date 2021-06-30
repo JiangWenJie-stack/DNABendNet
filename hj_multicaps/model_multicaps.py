@@ -1,6 +1,7 @@
-import keras
-from tensorflow.keras import layers
 import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+
 
 
 class Capsule_Mul(layers.Layer):

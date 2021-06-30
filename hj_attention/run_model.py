@@ -91,4 +91,4 @@ history = train(model, X_train, Y_train, (X_valid, Y_valid),
 #------------------------------------------------------------------------------#
 # evaluate model
 #------------------------------------------------------------------------------#
-evaluate(model, X_test, Y_test, history, figure_path)
+evaluate(model, X_test, Y_test, history, model_path, figure_path)

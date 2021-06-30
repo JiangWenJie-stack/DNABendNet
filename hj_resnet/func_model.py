@@ -118,7 +118,7 @@ def train(model, X_train, Y_train, validation_data, checkpoint_path="model",
     return history
 
 
-def evaluate(model, X_test, Y_test, history,
+def evaluate(model, X_test, Y_test, history=None,
 			 checkpoint_path="model", figure_path='figure'):
 
 	if checkpoint_path is not None and os.path.exists(checkpoint_path+'.index'):
@@ -155,8 +155,9 @@ def evaluate(model, X_test, Y_test, history,
 	plt.xlabel("Y_test", fontsize=10, rotation=0)
 	plt.savefig(figure_path+'/contrast.png')
 
-	plt.figure(figsize=(5,5))
-	plt.plot(history.history['loss'], label="train loss")
-	plt.plot(history.history['val_loss'], label="validation loss")
-	plt.legend(loc='best')
-	plt.savefig(figure_path+'/loss.pdf')
+	if history is not None:
+		plt.figure(figsize=(5,5))
+		plt.plot(history.history['loss'], label="train loss")
+		plt.plot(history.history['val_loss'], label="validation loss")
+		plt.legend(loc='best')
+		plt.savefig(figure_path+'/loss.pdf')
