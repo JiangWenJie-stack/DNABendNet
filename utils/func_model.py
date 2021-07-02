@@ -18,6 +18,18 @@ def apply_rev_comp(X_train, alpha=0.5):
 	X[odr[0:isPick],] = rev_comp(X[odr[0:isPick],])
 	return X
 
+
+def roll(x):
+	return np.roll(x, 1, 1)
+
+def apply_roll(X_train, alpha=0.2):
+	X = X_train.copy()
+	np.random.seed(12345)
+	odr = np.random.permutation(X.shape[0])
+	isPick=int(len(odr)*alpha+1)
+	X[odr[0:isPick],] = roll(X[odr[0:isPick],])
+	return X
+
 def onehot(DNA_seq):
     """
 

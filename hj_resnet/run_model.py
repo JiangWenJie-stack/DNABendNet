@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 import sys
 import os
-sys.path.append("../hj_resnet")
+sys.path.append("../utils")
 from func_model import extraData, apply_rev_comp, train, evaluate
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
