@@ -1,0 +1,2 @@
+Gwas的Gwascatlog文件同snp151文件对应结果：Gwas_in_snp.txt
+snp151中非Gwas随机抽取的结果：non-Gwas_in_snp.txt
