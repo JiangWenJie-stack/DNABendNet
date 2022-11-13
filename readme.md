@@ -1,1 +1,1 @@
-The project devotes to explore the relationship between DNA benda and biological function
+The project devotes to predict the DNA Bendability
