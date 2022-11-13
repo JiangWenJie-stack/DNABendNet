@@ -1,5 +1,6 @@
 ## The project devotes to predict the DNA Bendability
 
+![workflow](https://github.com/JiangWenJie-stack/DNA-Hardness-Prediction/blob/main/img/BendNet_workflow.png)
 ### 0 DataSet Loc
 ```
   cd ./Data
