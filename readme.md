@@ -19,7 +19,7 @@ pip freeze > reqirements.txt
 
 ### Addition
 
-Online webserver http://www.dnabendnet.com:8000/
+Online webserver http://www.dnabendnet.com/
 
 ### Reference
 Assessing base-resolution DNA mechanics on the genome scale
