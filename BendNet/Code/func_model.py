@@ -34,10 +34,10 @@ def onehot(DNA_seq):
         elif DNA_seq[i]=='C':
             singleDNAFragement[i,3]=1
         elif DNA_seq[i]=='N':
-            singleDNAFragement[i, 0] = 0.25
-            singleDNAFragement[i, 1] = 0.25
-            singleDNAFragement[i, 2] = 0.25
-            singleDNAFragement[i, 3] = 0.25
+            singleDNAFragement[i, 0] = 0
+            singleDNAFragement[i, 1] = 0
+            singleDNAFragement[i, 2] = 0
+            singleDNAFragement[i, 3] = 0
     return singleDNAFragement
 
 def extraData(train_dir, vaild_dir, test_dir):
